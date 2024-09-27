@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Estilo del body */
+body {
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    background-image: url('/imagen1.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Cubre toda la ventana */
+    background-position: center; /* Centra la imagen */
+    display: flex; /* Flexbox para centrar contenido si es necesario */
+    flex-direction: column; /* Disposición en columna */
+}
+
+  
+  .home-container {
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FF8C00;
+  }
+  
+  .logo {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    height: 40px; /* Ajusta el tamaño según sea necesario */
+    background-image: url('/bus-image.png'); /* Asegúrate de que la ruta sea correcta */
+    background-size: contain; /* Para que la imagen se ajuste bien */
+    background-repeat: no-repeat; /* No repetir la imagen */
+}
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login-btn, .signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-btn {
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .signup-btn {
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .main-header {
+    display: flex; /* Usar flexbox */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centra verticalmente */
+    padding: 50px;
+    min-height: 60vh; /* Asegura que la sección principal tenga altura mínima */
+}
+  
+  .header-content {
+    max-width: 50%;
+  }
+  
+  .header-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+  
+  .header-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .start-btn {
+    padding: 15px 30px;
+    background-color: #00BFFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .city-image {
+    width: 500px; /* Aumenta el ancho de la imagen */
+    height: 400px; /* Aumenta la altura de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    background-image: url('/imagen2.jpg'); /* Ruta de la imagen */
+    background-size: cover; /* Cubre todo el área del div */
+    background-position: center; /* Centra la imagen dentro del div */
+    margin: 0 auto; /* Centra el div horizontalmente */
+}
+  
+  /* Estilo del pie de página */
+  .footer {
+    padding: 20px;
+    background-color: #333;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    z-index: 1000;
+}
+  
+  .footer p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .footer strong {
+    font-size: 16px;
+    color: #FF8C00;
+  }
+  
+  /* Estilo para el logo del footer */
+  .footer-logo {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('/logo.png');
+    background-size: cover;
+    background-position: center;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  
+  .footer-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-paragraph-container {
+    text-align: right; /* Alinea el texto a la derecha */
+}
+
+.footer-paragraph {
+    margin: 0; /* Elimina el margen por defecto */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+  
