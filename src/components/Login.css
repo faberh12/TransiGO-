@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .login-container {
+    font-family: Arial, sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url('/public/imagen2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(255, 140, 0, 0.8);
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    background-image: url('/images/bus-image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    cursor: pointer;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login-btn,
+  .signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-btn {
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .signup-btn {
+    background-color: #FF8C00;
+    color: white;
+  }
+  
+  .login-content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
