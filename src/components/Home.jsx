@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 
-const Home = () => {
+export function Home() {
   return (
     <div className="home-container">
       {/* Barra de navegación */}
@@ -45,5 +45,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
