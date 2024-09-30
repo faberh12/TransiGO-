@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 
-const Login = () => {
+export function Login() {
   return (
     <div className="login-container">
       {/* Barra de navegación */}
@@ -25,5 +25,3 @@ const Login = () => {
     </div>
   );
 };
-
-export default Login;

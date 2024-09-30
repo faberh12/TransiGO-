@@ -3,7 +3,7 @@ import React from "react";
 import './FAQ.css';
 
 
-const FAQ = () => {
+export function FAQ() {
   const [preguntas, setPreguntas] = useState([
     {
       id: 1,
@@ -90,5 +90,3 @@ const FAQ = () => {
     </div>
   )
 }
-
-export default FAQ
