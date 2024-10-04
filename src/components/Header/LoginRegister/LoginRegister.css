@@ -1,0 +1,21 @@
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .login-btn, .signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .login-btn {
+    background-color: #00BFFF;
+    color: white;
+  }
+  
+  .signup-btn {
+    background-color: #00BFFF;
+    color: white;
+  }
