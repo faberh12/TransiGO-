@@ -1,77 +1,201 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .login-container {
-    font-family: Arial, sans-serif;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: url('/public/imagen2.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(255, 140, 0, 0.8);
-  }
-  
-  .logo {
-    width: 40px;
-    height: 40px;
-    background-image: url('/images/bus-image.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    cursor: pointer;
-  }
-  
-  .auth-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .login-btn,
-  .signup-btn {
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .login-btn {
-    background-color: #00BFFF;
-    color: white;
-  }
-  
-  .signup-btn {
-    background-color: #FF8C00;
-    color: white;
-  }
-  
-  .login-content {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    
-  
+body {
+  height: 100vh;
+  background-image: url('/imagen1.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.login-container {
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #FF8C00;
+}
+
+.logo {
+  width: 40px; 
+  height: 40px; 
+  background-image: url('/bus-image.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn, .signup-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-btn {
+  background-color: #00BFFF;
+  color: white;
+}
+
+.signup-btn {
+  background-color: #00BFFF;
+  color: white;
+}
+
+.login-header {
+  text-align: center; 
+  margin-top: 30px;
+}
+
+.header-content {
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.header-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.header-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el formulario */
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; 
+}
+
+.login-form {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  padding: 30px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  width: 300px; /* Ancho fijo del formulario */
+  text-align: left;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #00BFFF;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none; /* Elimina el contorno */
+  transition: border-color 0.3s; /* Transición suave */
+}
+
+.input-field input:focus {
+  border-color: #008CBA; /* Color del borde al enfocar */
+}
+
+.login-btn, .signup-btn {
+  padding: 10px; 
+  background-color: #00BFFF; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  width: 100%; /* Botones ocupan todo el ancho */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.login-btn:hover, .signup-btn:hover {
+  background-color: #008CBA; /* Color al pasar el ratón */
+}
+
+/* Pie de página */
+.footer {
+  padding: 20px;
+  background-color: #333;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  position: fixed;
+  bottom: 0; 
+  left: 0; 
+  right: 0; 
+  z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer strong {
+  font-size: 16px;
+  color: #FF8C00;
+}
+
+.footer-logo {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('/logo.png');
+  background-size: cover;
+  background-position: center;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-paragraph-container {
+  text-align: right; 
+}
+
+.footer-paragraph {
+  margin: 0;
+  line-height: 1.5;
+}
