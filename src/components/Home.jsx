@@ -1,23 +1,12 @@
 import React from 'react';
 import './Home.css';
+import { Header } from './Header/Header';
 
 export function Home() {
   return (
     <div className="home-container">
       {/* Barra de navegación */}
-      <nav className="navbar">
-        <div className="logo" />
-        <ul className="nav-links">
-          <li>Inicio</li>
-          <li>Nosotros</li>
-          <li>Contacto</li>
-          <li>FAQ</li>
-        </ul>
-        <div className="auth-buttons">
-          <button className="login-btn">Log In</button>
-          <button className="signup-btn">Sign Up</button>
-        </div>
-      </nav>
+      <Header/>
 
       {/* Encabezado principal */}
       <header className="main-header">
