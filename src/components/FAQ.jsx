@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import React from "react";
 import './FAQ.css';
+import { Header } from './Header/Header';
 
 
 export function FAQ() {
@@ -40,22 +41,7 @@ export function FAQ() {
   };
   return(
     <div className="container">
-      <div className="header-container">
-        {/* Barra de navegación */}
-        <nav className="navbar">
-          <div className="logo" />
-            <ul className="nav-links">
-              <li>Inicio</li>
-              <li>Nosotros</li>
-              <li>Contacto</li>
-              <li>FAQ</li>
-            </ul>
-          <div className="header-buttons">
-            <button className="count-btn"></button>
-            <button className="menu-btn"></button>
-          </div>
-        </nav>
-      </div>
+      <Header/>
       <div className="inter-container">
         <div className="title">
           <h1>Preguntas frecuentes</h1>
