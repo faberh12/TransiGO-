@@ -3,19 +3,20 @@
     gap: 10px;
   }
   
-  .login-btn, .signup-btn {
+  .login-button, .signup-button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 7px;
   }
   
-  .login-btn {
+  .login-button {
     background-color: #00BFFF;
     color: white;
   }
   
-  .signup-btn {
+  .signup-button {
     background-color: #00BFFF;
     color: white;
   }

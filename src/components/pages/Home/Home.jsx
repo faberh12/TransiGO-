@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css';
-import { Header } from './Header/Header';
+import { Header } from '../../molecules/Header/Header';
 
 export function Home() {
   return (
