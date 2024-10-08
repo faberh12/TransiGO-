@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModuloUsers.css';
 import { useState } from 'react';
-import { Header } from './Header/Header';
+import { Header } from '../../molecules/Header/Header';
 
 export function ModuloUsers() {
     const [mostrarInfo, setMostrarInfo] = useState([

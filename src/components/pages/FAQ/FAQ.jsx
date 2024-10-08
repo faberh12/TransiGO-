@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from "react";
 import './FAQ.css';
-import { Header } from './Header/Header';
+import { Header } from '../../molecules/Header/Header';
 
 
 export function FAQ() {
