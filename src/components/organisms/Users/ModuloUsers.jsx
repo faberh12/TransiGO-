@@ -4,62 +4,30 @@ import { useState } from 'react';
 import { Header } from '../../molecules/Header/Header';
 
 export function ModuloUsers() {
-    const [mostrarInfo, setMostrarInfo] = useState([
-        {
-            id: 1,
-            boton: 'Ver detalles de la ruta',
-            contenido: 'Aquí están tus detalles de la ruta.',
-            abierto: true,
-        },
-        {
-            id: 2,
-            boton: 'Ver mapa completo',
-            contenido: 'Aquí está tu mapa completo.',
-            abierto: false,
-        },
-        {
-            id: 3,
-            boton: 'Guardar rutas',
-            contenido: 'Aquí puedes guardar tus rutas.',
-            abierto: false,
-        },
-        {
-            id: 4,
-            boton: 'Ver tus rutas',
-            contenido: 'Aquí puedes ver tus rutas.',
-            abierto: false,
-        }
-    ]);
-
-    // Función que muestra u oculta la información
-    const handleButtonClick = (id) => {
-        setMostrarInfo(
-            mostrarInfo.map((boton) =>
-                boton.id === id ? { ...boton, abierto: !boton.abierto } : boton
-              )
-        );
-    };
     return (
-        <div className="container">
+        <div className="container_module">
             <Header/>
             {/* Contenido del modulo */}
-            <div className="welcome-container">
-                <h1>Bienvenido (usuario)</h1>
-                <h2>¿Qué desea hacer?</h2>
-                <button className=''></button>
-            </div>
-            <div className="map-image" />
-            <div className='modulo-container'>
-                {mostrarInfo.map((boton) => (
-                    <div className='modulo-option'>
-                        <div className='modulo-option-header'>
-                            <h2>{mostrarInfo.mostrarInfo}</h2>
-                            <button className='modulo-toggle' onClick={() => handleButtonClick(mostrarInfo.id)}>
-                                {mostrarInfo.abierto ? '-' : '+'}
-                            </button>
+            <div className='inter_container_module'>
+                <div className='left_section'>
+                    <div className='title_module'>
+                        <h1>Bienvenido (usuario)</h1>
+                        <div className="map_image" />
+                        <div className='footer_module'>
+                            <img src="/logo.png" alt="" />
+                            <p>Manizales, Caldas</p>
                         </div>
                     </div>
-                ))}
+                </div>
+                <div className='right_section'>
+                    <div className='module_option_header'>
+                        <h2>¿Qué desea hacer?</h2>
+                        <button>Ver detalles de la ruta</button>
+                        <button>Ver mapa completo</button>
+                        <button>Guardar rutas</button>
+                        <button>Ver tus rutas</button>
+                    </div>
+                </div>
             </div>
         </div>
     );
