@@ -40,12 +40,13 @@ body {
   width: 100%; 
   color: white;
   text-shadow: 1px 1px black;
+  margin-bottom: 20px;
 }
 
 .login__images{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .recent-logins {
@@ -65,11 +66,10 @@ body {
 }
 
 .user-image {
-  background-image: url('/public/image_2.jpg')
+  margin-right: 20px;
 }
 
 .add-image {
-  background-image: url('/public/image_3.jpg');
   display: flex;
   justify-content: center;
   align-items: center;

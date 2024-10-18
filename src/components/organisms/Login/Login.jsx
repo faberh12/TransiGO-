@@ -10,8 +10,8 @@ export function Login() {
           <p>Haz clic en una foto o agrega una</p>
         </div>
         <div className='login__images'>
-          <img src='/image_2.jpg' className="user-image" />
-          <img src='/image_2.jpg' className="add-image" />
+          <img src='/user.jpg' className="user-image" />
+          <img src='/user.jpg' className="add-image" />
         </div>
       </div>
 
