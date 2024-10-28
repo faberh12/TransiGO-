@@ -96,6 +96,11 @@ body {
     border: none;
     cursor: pointer;
     font-size: 18px;
+
+    & a{
+      text-decoration: none;
+      color:white;
+    }
   }
   
   .city-image {

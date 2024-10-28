@@ -16,8 +16,8 @@ export function Header() {
       <div className="logo" />
       <nav className="nav-links">
         <li className={router.pathname == '/' ? 'current' : ''}><Link to={"/"}>Inicio</Link></li>
-        <li className={router.pathname == '/user' ? 'current' : ''}><Link to={"/user"}>Nosotros</Link></li>
         <li className={router.pathname == '/Contact' ? 'current' : ''}><Link to={"/Contact"}>Contacto</Link></li>
+        <li className={router.pathname == '/user'}><Link to={"/"}>Nosotros</Link></li>
         <li className={router.pathname == '/FAQ' ? 'current' : ''}><Link to={"/FAQ"}>FAQ</Link></li>
       </nav>
       {session? <UserAuth/> : <LoginRegister/>}

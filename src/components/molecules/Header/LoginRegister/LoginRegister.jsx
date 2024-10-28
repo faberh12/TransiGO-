@@ -8,7 +8,7 @@ export function LoginRegister() {
       <Link to={'/login'}>
         <button className="login-button">Log In</button>
       </Link>
-      <Link to={'/'}>
+      <Link to={'/signup'}>
         <button className="signup-button">Sign Up</button>
       </Link>
     </div>
