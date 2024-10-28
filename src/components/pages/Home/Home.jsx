@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css';
 import { Header } from '../../molecules/Header/Header';
 
+import { Link, useLocation } from 'react-router-dom';
+
 export function Home() {
   return (
     <div className="home-container">
@@ -13,7 +15,7 @@ export function Home() {
         <div className="header-content">
           <h1>Bienvenido a TransiGO!</h1>
           <p>Prepárate para explorar las rutas de buses en Manizales.</p>
-          <button className="start-btn">Comenzar</button>
+          <button className="start-btn"><Link to={"/signup"}>Comenzar</Link></button>
         </div>
         <div className="city-image" />
       </header>

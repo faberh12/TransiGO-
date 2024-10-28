@@ -1,6 +1,8 @@
 import React from 'react';
 import './Login.css';
 
+import { Link, useLocation } from 'react-router-dom';
+
 export function Login() {
   return (
     <section className='login'>
@@ -27,8 +29,12 @@ export function Login() {
             <label htmlFor="password">Contraseña</label>
             <input type="password" id="password" placeholder="Contraseña" />
           </div>
-          <button className="login-btn">Iniciar Sesión</button>
-          <button className="signup-btn">Registrarse</button>
+          <button className="login-btn"><Link to={"/user"}>Iniciar Sesión</Link></button>
+          <p className='register-question'>
+            ¿No tienes una cuenta?
+            <br />
+            <Link className="signup-btn" to={"/signup"}>Registrarse</Link>
+          </p>
         </form>
       </div>
     </section>
