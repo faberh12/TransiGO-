@@ -1,0 +1,32 @@
+.route-history {
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+  }
+  
+  .route-history h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .route-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .route-item p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .route-item:last-child {
+    border-bottom: none;
+  }
+  
+  .offline-message {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
+}

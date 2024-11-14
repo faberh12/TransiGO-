@@ -1,0 +1,29 @@
+/* src/components/WeeklySummary.css */
+
+.weekly-summary {
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #333;
+  }
+  
+  .summary-info {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .routes-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .route-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  

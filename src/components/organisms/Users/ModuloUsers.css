@@ -73,3 +73,11 @@
     background-position: center; 
     margin: 50px auto;
 }
+
+.route-history-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
