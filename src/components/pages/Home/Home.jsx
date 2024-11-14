@@ -2,16 +2,15 @@ import React from 'react';
 import './Home.css';
 import { Header } from '../../molecules/Header/Header';
 import { Link } from 'react-router-dom';
+import NearbyStop from '../NearbyStop';
 
 export function Home() {
   const tarifa = 2700; // Tarifa fija del bus
   
   return (
     <div className="home-container">
-      {/* Barra de navegación */}
       <Header />
 
-      {/* Encabezado principal */}
       <header className="main-header">
         <div className="header-content">
           <h1>Bienvenido a TransiGO!</h1>
@@ -22,11 +21,9 @@ export function Home() {
             <p>La tarifa actual del bus es: <strong>${tarifa}</strong></p>
           </div>
 
-          {/* Contenedor para los botones */}
           <div className="button-container">
             <button className="start-btn"><Link to={"/signup"}>Comenzar</Link></button>
 
-            {/* Botón de Servicio al Cliente */}
             <button className="service-btn">
               <Link to="/contact">Servicio al Cliente</Link>
             </button>
@@ -35,7 +32,11 @@ export function Home() {
         <div className="city-image" />
       </header>
 
-      {/* Pie de página */}
+      <section className="nearby-stop-section">
+        <h2>Encuentra la parada de buseta más cercana</h2>
+        <NearbyStop />
+      </section>
+
       <footer className="footer">
         <div className="footer-location">
           <div className="footer-logo" />
@@ -51,6 +52,3 @@ export function Home() {
     </div>
   );
 }
-
-
-
