@@ -197,3 +197,50 @@ border-radius: 10px;
 ::-webkit-scrollbar-track {
 background-color: #FF8C00;
 }
+
+.valoracion-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.stars-container {
+  display: inline-block;
+  font-size: 40px;
+  margin-right: 10px; /* Espacio entre estrellas y el botón */
+}
+
+.star {
+  cursor: pointer;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.star.filled {
+  color: gold; /* Color amarillo para las estrellas seleccionadas */
+}
+
+.enviar-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Botón de color verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.enviar-btn:hover {
+  background-color: #45a049; /* Efecto al pasar el ratón */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+}

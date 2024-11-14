@@ -3,7 +3,6 @@ import React from "react";
 import './FAQ.css';
 import { Header } from '../../molecules/Header/Header';
 
-
 export function FAQ() {
   const [preguntas, setPreguntas] = useState([
     {
@@ -39,9 +38,23 @@ export function FAQ() {
       )
     );
   };
-  return(
+
+  // Estado para almacenar las estrellas seleccionadas
+  const [valoracion, setValoracion] = useState(0);
+
+  // Función para manejar la selección de estrellas
+  const handleValoracion = (estrellas) => {
+    setValoracion(estrellas); // Actualiza el estado con las estrellas seleccionadas
+  };
+
+  // Función para manejar el envío de la valoración
+  const handleEnviarValoracion = () => {
+    alert(`Valoración enviada: ${valoracion} estrella${valoracion !== 1 ? 's' : ''}`);
+  };
+
+  return (
     <div className="container">
-      <Header/>
+      <Header />
       <div className="inter-container">
         <div className="title">
           <h1>Preguntas frecuentes</h1>
@@ -55,24 +68,45 @@ export function FAQ() {
       </div>
       <div className="faq-container">
         {preguntas.map((pregunta) => (
-        <div className="faq-question">
-          <div className="faq-question-header">
-            <h2>{pregunta.pregunta}</h2>
-            <button
-              className="faq-toggle"
-              onClick={() => handleToggle(pregunta.id)}
-            >
-              {pregunta.abierto ? '-' : '+'}
-            </button>
-          </div>
-          {pregunta.abierto && (
-            <div className="faq-answer">
-              <p>{pregunta.respuesta}</p>
+          <div className="faq-question" key={pregunta.id}>
+            <div className="faq-question-header">
+              <h2>{pregunta.pregunta}</h2>
+              <button
+                className="faq-toggle"
+                onClick={() => handleToggle(pregunta.id)}
+              >
+                {pregunta.abierto ? '-' : '+'}
+              </button>
             </div>
-          )}
+            {pregunta.abierto && (
+              <div className="faq-answer">
+                <p>{pregunta.respuesta}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
+
+      {/* Sección de Valoración */}
+      <div className="valoracion-container">
+        <h2>Valorar el Servicio</h2>
+        <div className="stars-container">
+          {[1, 2, 3, 4, 5].map((estrellas) => (
+            <span
+              key={estrellas}
+              className={`star ${valoracion >= estrellas ? 'filled' : ''}`}
+              onClick={() => handleValoracion(estrellas)}
+            >
+              ★
+            </span>
+          ))}
+        </div>
+        <button className="enviar-btn" onClick={handleEnviarValoracion}>
+          Enviar
+        </button>
+        <p>{valoracion} Estrella{valoracion !== 1 ? 's' : ''}</p>
+      </div>
     </div>
-  )
+  );
 }
+
