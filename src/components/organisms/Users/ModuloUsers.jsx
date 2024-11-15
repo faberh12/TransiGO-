@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './ModuloUsers.css';
 import { Header } from '../../molecules/Header/Header';
 import RouteHistory from '../../RouteHistory';
@@ -9,6 +10,7 @@ export function ModuloUsers() {
     const [showWeeklySummary, setShowWeeklySummary] = useState(false);
     const [savedRoutes, setSavedRoutes] = useState([]);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
+    const [dynamicText, setDynamicText] = useState(""); // Texto dinámico
 
     // Escucha el cambio de conexión
     useEffect(() => {
@@ -30,10 +32,12 @@ export function ModuloUsers() {
 
     const toggleRouteHistory = () => {
         setShowRouteHistory(!showRouteHistory);
+        setDynamicText("Mostrando el historial de rutas guardadas.");
     };
 
     const toggleWeeklySummary = () => {
-        setShowWeeklySummary(!showWeeklySummary); 
+        setShowWeeklySummary(!showWeeklySummary);
+        setDynamicText("Mostrando el resumen semanal.");
     };
 
     // Guardar una nueva ruta en localStorage
@@ -41,6 +45,7 @@ export function ModuloUsers() {
         const updatedRoutes = [...savedRoutes, newRoute];
         setSavedRoutes(updatedRoutes);
         localStorage.setItem("savedRoutes", JSON.stringify(updatedRoutes));
+        setDynamicText("¡Ruta guardada exitosamente!");
     };
 
     return (
@@ -60,11 +65,16 @@ export function ModuloUsers() {
                 <div className='right_section'>
                     <div className='module_option_header'>
                         <h2>¿Qué desea hacer?</h2>
+                        <button><Link to={"/user/rutas"}>Consulta ruta</Link></button>
                         <button onClick={() => saveRoute({ id: Date.now(), nombre: "Nueva Ruta", destino: "Destino" })}>
                             Guardar ruta actual
                         </button>
                         <button onClick={toggleRouteHistory}>Ver tus rutas guardadas</button>
                         <button onClick={toggleWeeklySummary}>Ver resumen semanal</button>
+                    </div>
+                    <div className='text-container'>
+                        {/* Este es el texto dinámico que cambiará */}
+                        {dynamicText && <p>{dynamicText}</p>}
                     </div>
 
                     {/* Historial de rutas guardadas */}
