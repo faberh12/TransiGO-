@@ -14,6 +14,11 @@ export function ModuloUsers() {
     const [showNotificationForm, setShowNotificationForm] = useState(false);
     const [savedRoutes, setSavedRoutes] = useState([]);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+    const [alertsActivated, setAlertsActivated] = useState(false);
+    const [showReportForm, setShowReportForm] = useState(false);
+    const [reportText, setReportText] = useState("");
+
     const [dynamicText, setDynamicText] = useState("");
     const [showTimeChecker, setShowTimeChecker] = useState(false); // Estado para controlar la visibilidad de TimeChecker
 
@@ -28,6 +33,7 @@ export function ModuloUsers() {
         { id: 4, name: "Parada 4" },
         { id: 5, name: "Destino final" },
     ];
+
 
     useEffect(() => {
         const handleOnlineStatus = () => setIsOnline(navigator.onLine);
@@ -85,6 +91,27 @@ export function ModuloUsers() {
         setShowTimeChecker(!showTimeChecker); // Cambiar el estado de la visibilidad
     };
 
+    const toggleAlerts = () => {
+        setAlertsActivated(!alertsActivated);
+        if (!alertsActivated) {
+            console.log("Alertas activadas");
+            
+        } else {
+            console.log("Alertas desactivadas");
+        }
+    };
+
+    const toggleReportForm = () => {
+        setShowReportForm(!showReportForm);
+    };
+
+    const handleReportSubmit = (e) => {
+        e.preventDefault();
+        console.log("Reporte enviado:", reportText);
+        setReportText("");
+        setShowReportForm(false);
+    };
+
     return (
         <div className="container_module">
             <Header />
@@ -114,6 +141,27 @@ export function ModuloUsers() {
                         </button>
                         <button onClick={toggleRouteHistory}>Ver tus rutas guardadas</button>
                         <button onClick={toggleWeeklySummary}>Ver resumen semanal</button>
+
+                        <button onClick={toggleAlerts}>
+                            {alertsActivated ? "Desactivar alertas de desvío de ruta" : "Activar alertas de desvío de ruta"}
+                        </button>
+                        <button onClick={toggleReportForm}>Reportar problema en la ruta</button>
+                    </div>
+
+                    {/* Formulario de reporte de problemas */}
+                    {showReportForm && (
+                        <form className="report-form" onSubmit={handleReportSubmit}>
+                            <textarea 
+                                placeholder="Describe el problema en la ruta"
+                                value={reportText}
+                                onChange={(e) => setReportText(e.target.value)}
+                            />
+                            <button type="submit">Enviar reporte</button>
+                        </form>
+                    )}
+
+                    {/* Historial de rutas guardadas */}
+
                         <button onClick={toggleNotificationForm}>
                             {showNotificationForm ? "Cerrar notificaciones" : "Configurar notificaciones"}
                         </button>
@@ -181,3 +229,4 @@ export function ModuloUsers() {
         </div>
     );
 }
+
