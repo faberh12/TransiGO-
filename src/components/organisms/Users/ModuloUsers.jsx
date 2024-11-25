@@ -9,8 +9,10 @@ export function ModuloUsers() {
     const [showWeeklySummary, setShowWeeklySummary] = useState(false);
     const [savedRoutes, setSavedRoutes] = useState([]);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
+    const [alertsActivated, setAlertsActivated] = useState(false);
+    const [showReportForm, setShowReportForm] = useState(false);
+    const [reportText, setReportText] = useState("");
 
-    // Escucha el cambio de conexión
     useEffect(() => {
         const handleOnlineStatus = () => setIsOnline(navigator.onLine);
         window.addEventListener("online", handleOnlineStatus);
@@ -22,7 +24,6 @@ export function ModuloUsers() {
         };
     }, []);
 
-    // Cargar rutas guardadas de localStorage
     useEffect(() => {
         const routes = JSON.parse(localStorage.getItem("savedRoutes")) || [];
         setSavedRoutes(routes);
@@ -36,11 +37,31 @@ export function ModuloUsers() {
         setShowWeeklySummary(!showWeeklySummary); 
     };
 
-    // Guardar una nueva ruta en localStorage
     const saveRoute = (newRoute) => {
         const updatedRoutes = [...savedRoutes, newRoute];
         setSavedRoutes(updatedRoutes);
         localStorage.setItem("savedRoutes", JSON.stringify(updatedRoutes));
+    };
+
+    const toggleAlerts = () => {
+        setAlertsActivated(!alertsActivated);
+        if (!alertsActivated) {
+            console.log("Alertas activadas");
+            
+        } else {
+            console.log("Alertas desactivadas");
+        }
+    };
+
+    const toggleReportForm = () => {
+        setShowReportForm(!showReportForm);
+    };
+
+    const handleReportSubmit = (e) => {
+        e.preventDefault();
+        console.log("Reporte enviado:", reportText);
+        setReportText("");
+        setShowReportForm(false);
     };
 
     return (
@@ -65,7 +86,23 @@ export function ModuloUsers() {
                         </button>
                         <button onClick={toggleRouteHistory}>Ver tus rutas guardadas</button>
                         <button onClick={toggleWeeklySummary}>Ver resumen semanal</button>
+                        <button onClick={toggleAlerts}>
+                            {alertsActivated ? "Desactivar alertas de desvío de ruta" : "Activar alertas de desvío de ruta"}
+                        </button>
+                        <button onClick={toggleReportForm}>Reportar problema en la ruta</button>
                     </div>
+
+                    {/* Formulario de reporte de problemas */}
+                    {showReportForm && (
+                        <form className="report-form" onSubmit={handleReportSubmit}>
+                            <textarea 
+                                placeholder="Describe el problema en la ruta"
+                                value={reportText}
+                                onChange={(e) => setReportText(e.target.value)}
+                            />
+                            <button type="submit">Enviar reporte</button>
+                        </form>
+                    )}
 
                     {/* Historial de rutas guardadas */}
                     {showRouteHistory && (
@@ -92,3 +129,4 @@ export function ModuloUsers() {
         </div>
     );
 }
+
