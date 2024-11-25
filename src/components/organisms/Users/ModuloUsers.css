@@ -38,12 +38,14 @@
 .module_option_header {
     text-align: center;
     margin-top: 80px;
+
     h2 {
         font-size: 35px;
     }
+
     button {
         display: block;
-        margin: 40px auto;
+        margin: 20px auto;
         padding: 15px 20px;
         width: 400px;
         cursor: pointer;
@@ -53,7 +55,24 @@
         border: 0.5px solid white;
         border-radius: 10px;
     }
+
+    button a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
+
+.text-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 100%;
+}
+
 
 .title_module {
     padding-top: 0px;
@@ -124,3 +143,114 @@
     background-color: #cc4628;
 }
 
+.time-checker-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    color: #000;
+}
+
+.time-checker-container h2, 
+.time-checker-container h3 {
+    color: #000;
+}
+
+.time-checker-container select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.route-details ul {
+    list-style-type: none;
+    padding: 0;
+    color: #000;
+}
+
+.route-details li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #000;
+}
+
+.route-details li strong {
+    color: #000;
+}
+
+.notification-settings {
+    background-color: #1f2a3b; 
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  
+  .notification-settings h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #63b3ed; 
+    margin-bottom: 20px;
+  }
+  
+  .notification-settings h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #b0c4de; 
+  }
+  
+  .notification-settings label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .notification-settings input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.3);
+  }
+  
+  .notification-settings button {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .notification-settings button:hover {
+    background-color: #3e8e41; 
+  }
+  
+  .notification-settings .notifications {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #2d3e50;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .notification-settings .notifications p {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #3e4c5a;
+  }
+  
+  .notification-settings .notifications p:last-child {
+    border-bottom: none;
+  }

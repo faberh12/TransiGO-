@@ -1,0 +1,47 @@
+.stops-info {
+    background-color: #1f2a3b;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+  
+  .stops-info h3 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #63b3ed;
+    margin-bottom: 20px;
+  }
+  
+  .stops-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .stops-info li {
+    padding: 8px 12px;
+    margin: 5px 0;
+    background-color: #2d3e50;
+    border-radius: 5px;
+  }
+  
+  .stops-info p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+  }
+  
+  .stops-info button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .stops-info button:hover {
+    background-color: #0056b3;
+  }
+  

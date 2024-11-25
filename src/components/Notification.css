@@ -1,0 +1,41 @@
+.notification-settings {
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.notification-settings h2, .notification-settings h3 {
+    color: #333;
+}
+
+.notification-settings label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.notification-settings button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.notification-settings button:hover {
+    background-color: #0056b3;
+}
+
+.notifications {
+    margin-top: 20px;
+    background: #e2e8f0;
+    padding: 15px;
+    border-radius: 6px;
+}
