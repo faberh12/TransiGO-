@@ -11,6 +11,7 @@ export function ModuloUsers() {
     const [savedRoutes, setSavedRoutes] = useState([]);
     const [isOnline, setIsOnline] = useState(navigator.onLine);
     const [dynamicText, setDynamicText] = useState(""); // Texto dinámico
+    const [showDisabilityModal, setShowDisabilityModal] = useState(false);
 
     // Escucha el cambio de conexión
     useEffect(() => {
@@ -48,6 +49,10 @@ export function ModuloUsers() {
         setDynamicText("¡Ruta guardada exitosamente!");
     };
 
+    const handleDisabilityResponse = (response) => {
+        setShowDisabilityModal(false);
+    };
+
     return (
         <div className="container_module">
             <Header />
@@ -65,7 +70,7 @@ export function ModuloUsers() {
                 <div className='right_section'>
                     <div className='module_option_header'>
                         <h2>¿Qué desea hacer?</h2>
-                        <button><Link to={"/user/rutas"}>Consulta ruta</Link></button>
+                        <button onClick={() => setShowDisabilityModal(true)}>Consulta ruta</button>
                         <button onClick={() => saveRoute({ id: Date.now(), nombre: "Nueva Ruta", destino: "Destino" })}>
                             Guardar ruta actual
                         </button>
@@ -97,8 +102,25 @@ export function ModuloUsers() {
                             Estás sin conexión. Las rutas guardadas están disponibles.
                         </div>
                     )}
+
+                    {showDisabilityModal && (
+                        <div className="modal-overlay">
+                            <div className="modal">
+                                <h3>¿Tienes alguna discapacidad?</h3>
+                                <div className="modal-buttons">
+                                    <button>
+                                        <Link to="/user/rutas-discapacidad">Si</Link>
+                                    </button>
+                                    <button>
+                                        <Link to="/user/rutas">No</Link>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
+
         </div>
     );
 }

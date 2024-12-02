@@ -3,21 +3,26 @@ import { Header } from './molecules/Header/Header';
 import './ConsultaRuta.css';
 
 export default function ConsultaRuta() {
-  // Estados para capturar el origen, destino y mensaje de la ruta
   const [origen, setOrigen] = useState('');
   const [destino, setDestino] = useState('');
   const [mensaje, setMensaje] = useState('');
+  const [avisoCompartido, setAvisoCompartido] = useState(false); // Nuevo estado
 
   const handleConsulta = (e) => {
-    e.preventDefault(); // Evitar que la página se recargue al enviar el formulario
+    e.preventDefault(); 
 
-    if (origen.toLowerCase() === 'centro' && destino.toLowerCase() === 'sultana') {
+    if(origen.toLowerCase() === 'centro' && destino.toLowerCase() === 'sultana'){
       setMensaje('La ruta entre el centro y la sultana está bloqueada.');
-    } else if (origen.toLowerCase() === 'centro' && destino.toLowerCase() === 'villapilar') {
+    } else if(origen.toLowerCase() === 'centro' && destino.toLowerCase() === 'villapilar'){
       setMensaje('La ruta está congestionada, puedes tomar la ruta (Centro - Chipre - Villapilar)');
-    } else {
+    } else{
       setMensaje('La ruta está disponible.');
     }
+  };
+
+  const handleCompartirRuta = () => {
+    setAvisoCompartido(true); // Muestra el aviso
+    setTimeout(() => setAvisoCompartido(false), 3000); // Oculta el aviso después de 3 segundos
   };
 
   return (
@@ -50,9 +55,15 @@ export default function ConsultaRuta() {
             <button className='consulta-button'>Consultar</button>
           </form>
           {mensaje && (
-            <p className={`mensaje ${mensaje === 'La ruta está disponible.' ? 'mensaje-disponible' : ''}`}>
+            <p className={`mensaje ${mensaje === 'La ruta está disponible.' ? 'mensaje-disponible' : 'mensaje-bloqueada'}`}>
               {mensaje}
             </p>
+          )}
+          {mensaje === 'La ruta está disponible.' && (
+            <button className="compartir-button" onClick={handleCompartirRuta}>Compartir Ruta</button>
+          )}
+          {avisoCompartido && (
+            <div className="aviso-compartido">Ruta compartida con éxito</div>
           )}
         </div>
       </div>

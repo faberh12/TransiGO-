@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.rutas-discapacidad {
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.container-rutas-discapacidad {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inter-container-rutas-discapacidad {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+
+.inter-container-rutas-discapacidad h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+.lista-rutas {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.lista-rutas li {
+  background-color: #e6ffe6;
+  color: #006600;
+  border: 1px solid #006600;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 18px;
+}

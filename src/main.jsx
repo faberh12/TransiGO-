@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { Home, Login, FAQ, ModuloUsers, Contact, Signup } from './components'
 import ConsultaRuta from './components/ConsultaRuta';
+import RutasDiscapacidad from './components/RutaDiscapacidad';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home />},
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
   { path: '/user', element: <ModuloUsers />},
   { path: '/Contact', element: <Contact />},
   { path: '/signup', element: <Signup />},
-  { path: '/user/rutas', element: <ConsultaRuta />}
+  { path: '/user/rutas', element: <ConsultaRuta />},
+  { path: '/user/rutas-discapacidad', element: <RutasDiscapacidad />}
 ]);
 
 createRoot(document.getElementById('root')).render(
